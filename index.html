@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Assignment</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 20px;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+        
+        .content-section {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: #2575fc;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .code-block {
+            background-color: #2d2d2d;
+            color: #f8f8f2;
+            padding: 15px;
+            border-radius: 5px;
+            margin: 15px 0;
+            overflow-x: auto;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .interactive-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .interactive-section {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .input-group {
+            margin-bottom: 15px;
+        }
+        
+        input[type="text"], input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+        
+        button {
+            background: #2575fc;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #1a60cb;
+        }
+        
+        .output {
+            background-color: #f8f9fa;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 15px;
+            min-height: 100px;
+            border-left: 4px solid #2575fc;
+        }
+        
+        .highlight {
+            color: #6a11cb;
+            font-weight: bold;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding: 20px;
+            color: #666;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>JavaScript Concepts Demonstration</h1>
+            <p>Variables, Conditionals, Functions, Loops, and DOM Interactions</p>
+        </header>
+        
+        <section class="content-section">
+            <h2>Part 1: Variables and Conditionals</h2>
+            <p>JavaScript variables are declared using <span class="highlight">let</span> and <span class="highlight">const</span>.</p>
+            
+            <div class="code-block">
+                // Variable declarations and conditionals<br>
+                let score = 85;<br>
+                const passingGrade = 60;<br>
+                let message = "";<br><br>
+                
+                if (score >= passingGrade) {<br>
+                &nbsp;&nbsp;message = "You passed the exam!";<br>
+                } else {<br>
+                &nbsp;&nbsp;message = "You need to try again.";<br>
+                }
+            </div>
+            
+            <div class="interactive-section">
+                <div>
+                    <h3>Try it yourself:</h3>
+                    <div class="input-group">
+                        <input type="number" id="scoreInput" placeholder="Enter your score" value="85">
+                    </div>
+                    <button onclick="checkScore()">Check Score</button>
+                    <div class="output" id="scoreResult">
+                        You passed the exam!
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Conditional Examples:</h3>
+                    <div class="output">
+                        <p id="conditionExample1"></p>
+                        <p id="conditionExample2"></p>
+                        <p id="conditionExample3"></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2>Part 2: Custom Functions</h2>
+            <p>Functions are reusable blocks of code that perform a specific task.</p>
+            
+            <div class="code-block">
+                // Function to calculate area of a rectangle<br>
+                function calculateArea(width, height) {<br>
+                &nbsp;&nbsp;return width * height;<br>
+                }<br><br>
+                
+                // Function to check if a number is even<br>
+                const isEven = function(num) {<br>
+                &nbsp;&nbsp;return num % 2 === 0;<br>
+                };
+            </div>
+            
+            <div class="interactive-section">
+                <div>
+                    <h3>Calculate Rectangle Area:</h3>
+                    <div class="input-group">
+                        <input type="number" id="widthInput" placeholder="Width" value="10">
+                    </div>
+                    <div class="input-group">
+                        <input type="number" id="heightInput" placeholder="Height" value="5">
+                    </div>
+                    <button onclick="calculateArea()">Calculate Area</button>
+                    <div class="output" id="areaResult">
+                        Result will appear here
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Check if Number is Even:</h3>
+                    <div class="input-group">
+                        <input type="number" id="numberInput" placeholder="Enter a number" value="16">
+                    </div>
+                    <button onclick="checkEven()">Check Number</button>
+                    <div class="output" id="evenResult">
+                        Result will appear here
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2>Part 3: Loops</h2>
+            <p>Loops are used to execute the same block of code multiple times.</p>
+            
+            <div class="code-block">
+                // For loop example<br>
+                for (let i = 1; i <= 5; i++) {<br>
+                &nbsp;&nbsp;console.log("Count: " + i);<br>
+                }<br><br>
+                
+                // While loop example<br>
+                let count = 1;<br>
+                while (count <= 5) {<br>
+                &nbsp;&nbsp;console.log("While count: " + count);<br>
+                &nbsp;&nbsp;count++;<br>
+                }
+            </div>
+            
+            <div class="interactive-section">
+                <div>
+                    <h3>For Loop Example:</h3>
+                    <div class="input-group">
+                        <input type="number" id="forLoopInput" placeholder="Enter a number" value="5">
+                    </div>
+                    <button onclick="runForLoop()">Run For Loop</button>
+                    <div class="output" id="forLoopResult">
+                        Results will appear here
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>While Loop Example:</h3>
+                    <div class="input-group">
+                        <input type="number" id="whileLoopInput" placeholder="Enter a number" value="5">
+                    </div>
+                    <button onclick="runWhileLoop()">Run While Loop</button>
+                    <div class="output" id="whileLoopResult">
+                        Results will appear here
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <section class="content-section">
+            <h2>Part 4: DOM Interactions</h2>
+            <p>The Document Object Model (DOM) allows JavaScript to interact with HTML elements.</p>
+            
+            <div class="code-block">
+                // Changing text content<br>
+                document.getElementById('elementId').textContent = 'New text';<br><br>
+                
+                // Handling click events<br>
+                button.addEventListener('click', function() {<br>
+                &nbsp;&nbsp;// Code to execute on click<br>
+                });<br><br>
+                
+                // Changing styles<br>
+                element.style.backgroundColor = 'blue';
+            </div>
+            
+            <div class="interactive-section">
+                <div>
+                    <h3>Change Text Content:</h3>
+                    <div class="input-group">
+                        <input type="text" id="textInput" placeholder="Enter new text" value="Hello DOM!">
+                    </div>
+                    <button onclick="changeText()">Change Text</button>
+                    <div class="output" id="textOutput">
+                        This text will change when you click the button.
+                    </div>
+                </div>
+                
+                <div>
+                    <h3>Change Background Color:</h3>
+                    <button onclick="changeColor('lightcoral')">Red</button>
+                    <button onclick="changeColor('lightgreen')">Green</button>
+                    <button onclick="changeColor('lightblue')">Blue</button>
+                    <button onclick="changeColor('#f8f9fa')">Reset</button>
+                    <div class="output" id="colorOutput">
+                        This div's color will change when you click the buttons.
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <footer>
+            <p>JavaScript Assignment &copy; 2023</p>
+        </footer>
+    </div>
+
+    <script>
+        // Part 1: Variables and Conditionals
+        function checkScore() {
+            const score = parseInt(document.getElementById('scoreInput').value);
+            const passingGrade = 60;
+            let message = "";
+            
+            if (score >= passingGrade) {
+                message = You passed the exam with a score of ${score}!;
+            } else {
+                message = `You need to try again. Your score ${score} is below the passing grade of ${passingGrade}.`;
+            }
+            
+            document.getElementById('scoreResult').textContent = message;
+        }
+        
+        // Display conditional examples on page load
+        document.getElementById('conditionExample1').textContent = 
+            "10 > 5: " + (10 > 5);
+        document.getElementById('conditionExample2').textContent = 
+            "10 === '10': " + (10 === '10');
+        document.getElementById('conditionExample3').textContent = 
+            "true && false: " + (true && false);
+        
+        // Part 2: Custom Functions
+        function calculateArea() {
+            const width = parseFloat(document.getElementById('widthInput').value);
+            const height = parseFloat(document.getElementById('heightInput').value);
+            
+            if (isNaN(width) || isNaN(height)) {
+                document.getElementById('areaResult').textContent = "Please enter valid numbers.";
+                return;
+            }
+            
+            const area = width * height;
+            document.getElementById('areaResult').textContent = 
+                `The area of a rectangle with width ${width} and height ${height} is ${area}.`;
+        }
+        
+        const isEven = function(num) {
+            return num % 2 === 0;
+        };
+        
+        function checkEven() {
+            const number = parseInt(document.getElementById('numberInput').value);
+            
+            if (isNaN(number)) {
+                document.getElementById('evenResult').textContent = "Please enter a valid number.";
+                return;
+            }
+            
+            if (isEven(number)) {
+                document.getElementById('evenResult').textContent = 
+                    `${number} is an even number.`;
+            } else {
+                document.getElementById('evenResult').textContent = 
+                    `${number} is an odd number.`;
+            }
+        }
+        
+        // Part 3: Loops
+        function runForLoop() {
+            const limit = parseInt(document.getElementById('forLoopInput').value);
+            let output = "";
+            
+            if (isNaN(limit)) {
+                document.getElementById('forLoopResult').textContent = "Please enter a valid number.";
+                return;
+            }
+            
+            for (let i = 1; i <= limit; i++) {
+                output += `Count: ${i}\n`;
+            }
+            
+            document.getElementById('forLoopResult').textContent = output;
+        }
+        
+        function runWhileLoop() {
+            const limit = parseInt(document.getElementById('whileLoopInput').value);
+            let output = "";
+            let count = 1;
+            
+            if (isNaN(limit)) {
+                document.getElementById('whileLoopResult').textContent = "Please enter a valid number.";
+                return;
+            }
+            
+            while (count <= limit) {
+                output += `While count: ${count}\n`;
+                count++;
+            }
+            
+            document.getElementById('whileLoopResult').textContent = output;
+        }
+        
+        // Part 4: DOM Interactions
+        function changeText() {
+            const newText = document.getElementById('textInput').value;
+            document.getElementById('textOutput').textContent = newText;
+        }
+        
+        function changeColor(color) {
+            document.getElementById('colorOutput').style.backgroundColor = color;
+        }
+        
+        // Additional DOM interaction: Change header color on click
+        document.querySelector('header').addEventListener('click', function() {
+            this.style.background = this.style.background.includes('6a11cb') ? 
+                'linear-gradient(135deg, #2575fc 0%, #6a11cb 100%)' : 
+                'linear-gradient(135deg, #6a11cb 0%, #2575fc 100%)';
+        });
+    </script>
+</body>
+</html>
